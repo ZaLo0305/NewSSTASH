@@ -1,118 +1,225 @@
-/* GENERAL */
+/* =========================
+   GLOBAL / BRAND BASE
+========================= */
+
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background: white;
-  color: black;
+  background: #0b0f0c;
+  color: white;
 }
 
-/* NAVBAR */
+/* =========================
+   NAVBAR
+========================= */
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: black;
-  padding: 0.5rem 1rem;
+  background: rgba(0,0,0,0.95);
+  backdrop-filter: blur(6px);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.nav-logo { height: 50px; }
+.nav-logo {
+  height: 50px;
+}
 
-.nav-links { list-style: none; display: flex; gap: 1rem; margin:0; padding:0; }
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
 
 .nav-links a {
-  color: white; text-decoration: none; font-weight: 600; transition: color 0.2s ease;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
 }
+
 .nav-links a:hover,
-.nav-links a.active { color: #f2c94c; }
-
-/* HERO */
-.hero {
-  display: flex; justify-content: center; align-items: center;
-  padding: 3rem 1rem;
-  background: url('sstash-burger-home.png') center/cover no-repeat;
-  position: relative;
+.nav-links a.active {
+  color: #1f5f3a;
 }
 
-.hero::after {
-  content: "";
-  position: absolute; top:0; left:0; right:0; bottom:0;
-  background: rgba(0,0,0,0.5);
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 90px 40px;
+  background: linear-gradient(180deg, #050805 0%, #0e1a12 100%);
 }
 
 .hero-card {
-  background: rgba(255,255,255,0.95);
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-  padding: 2rem;
-  text-align: center;
-  max-width: 400px;
-  position: relative; z-index:1;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  max-width: 1100px;
+  background: transparent;
 }
 
-/* HERO IMAGE */
 .hero-image {
-  width: 100%;
-  max-width: 300px;  /* clean and not too big */
-  height: auto;      /* maintain aspect ratio */
-  border-radius: 15px;
-  margin-bottom: 1rem;
+  width: 420px;
+  border-radius: 14px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.7);
 }
 
+.hero-card h1 {
+  font-size: 64px;
+  margin: 0;
+  letter-spacing: -1px;
+}
 
-/* CTA Button */
+.hero-card p {
+  font-size: 20px;
+  color: #cfcfcf;
+  margin-top: 10px;
+}
+
 .cta-button {
-  background: black; color: white; border:none;
-  padding: 1rem 2rem; font-size:1.2rem; border-radius:10px;
-  cursor: pointer; animation: pulse 2s infinite;
+  background: #1f5f3a;
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  font-size: 16px;
+  border-radius: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
-.cta-button:hover { background: #333; }
-@keyframes pulse { 0%{transform:scale(1);} 50%{transform:scale(1.05);} 100%{transform:scale(1);} }
 
-/* PREVIEW */
-.preview { text-align:center; padding: 3rem 1rem; }
-.preview-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap:1rem; }
-/* PREVIEW / FAN FAVORITES IMAGES */
+.cta-button:hover {
+  background: #2f7a4d;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   FAN FAVORITES / PREVIEW
+========================= */
+
+.preview {
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.preview h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 30px;
+}
+
 .preview-item img {
   width: 100%;
-  max-width: 180px;   /* consistent size */
-  height: 140px;      /* same height for all items */
-  object-fit: cover;  /* crops nicely without stretching */
-  border-radius: 12px;
-  margin-bottom: 0.5rem;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 12px;
 }
 
-/* INFO */
-.info { text-align:center; padding:2rem; background:#f9f9f9; border-top:1px solid #eee; }
+.preview-item h3 {
+  margin: 0;
+}
 
-/* MENU */
-.menu-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:1rem; padding:1rem; }
-.menu-item { background:#f9f9f9; border-radius:12px; padding:1rem; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.05); }
-/* MENU / ORDER PAGE IMAGES */
+/* =========================
+   INFO SECTION
+========================= */
+
+.info {
+  text-align: center;
+  padding: 60px 20px;
+  background: #101512;
+  border-top: 1px solid #1d2a22;
+}
+
+.info h2 {
+  margin-bottom: 8px;
+}
+
+/* =========================
+   MENU (ORDER PAGE)
+========================= */
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 30px;
+  padding: 40px;
+}
+
+.menu-item {
+  background: #121713;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: left;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
 .menu-item img {
   width: 100%;
-  max-width: 180px;
-  height: 140px;
+  height: 200px;
   object-fit: cover;
-  border-radius: 12px;
-  display: block;
-  margin: 0 auto 0.5rem;
+  border-radius: 14px;
+  margin-bottom: 10px;
 }
 
-/* ANIMATIONS */
-.fade-in { opacity:0; animation:fadeIn 1.5s ease-in forwards; }
-.slide-up { opacity:0; transform:translateY(20px); animation:slideUp 1.5s ease-out forwards; animation-delay:0.5s; }
-@keyframes fadeIn { to{ opacity:1; } }
-@keyframes slideUp { to{ opacity:1; transform:translateY(0); } }
+.menu-item h3 {
+  margin: 0;
+}
 
-/* Order Section Styling */
+.menu-item span {
+  display: block;
+  margin: 8px 0;
+  font-weight: 600;
+}
+
+.menu-item button {
+  background: #1f5f3a;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  color: white;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.menu-item button:hover {
+  background: #2f7a4d;
+}
+
+/* =========================
+   ORDER PANEL
+========================= */
+
 #order {
-  max-width: 400px;       /* keeps it narrow on desktop */
-  margin: 2rem auto;      /* centers it */
-  background: #f9f9f9;    /* subtle gray background */
-  padding: 1.5rem;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 420px;
+  margin: 3rem auto;
+  background: #101512;
+  padding: 2rem;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
 
 #order h2 {
@@ -128,17 +235,9 @@ body {
 
 #order-list li {
   display: flex;
-  justify-content: space-between; /* item on left, price on right */
+  justify-content: space-between;
   padding: 0.5rem 0;
-  border-bottom: 1px solid #ddd;
-}
-
-#total {
-  display: block;
-  text-align: right;
-  font-weight: 600;
-  margin-top: 0.5rem;
-  font-size: 1.1rem;
+  border-bottom: 1px solid #1f2a22;
 }
 
 #order-form label {
@@ -147,41 +246,53 @@ body {
   font-weight: 600;
 }
 
-#order-form input, #order-form button {
+#order-form input,
+#order-form select,
+#order-form button {
   width: 100%;
-  padding: 0.6rem;
+  padding: 0.7rem;
   margin-top: 0.3rem;
   border-radius: 10px;
-  border: 1px solid #ccc;
+  border: none;
   box-sizing: border-box;
 }
 
-#order-form button {
-  background: black;
+#order-form input,
+#order-form select {
+  background: #0c120e;
   color: white;
-  border: none;
-  margin-top: 1rem;
+}
+
+#order-form button {
+  background: #1f5f3a;
+  color: white;
+  margin-top: 1.2rem;
   cursor: pointer;
-  transition: background 0.2s;
+  font-weight: 600;
 }
 
 #order-form button:hover {
-  background: #333;
+  background: #2f7a4d;
 }
 
+/* =========================
+   ANIMATIONS
+========================= */
 
-@media (max-width: 500px) {
-  #order {
-    width: 90%;          /* leaves a little margin */
-    padding: 1rem;
-  }
-
-  #order-list li {
-    flex-direction: row; /* keeps item and price on one line */
-    font-size: 0.95rem;
-  }
-
-  #order-form input, #order-form button {
-    font-size: 0.95rem;
-  }
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in forwards;
 }
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 1.5s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes s
