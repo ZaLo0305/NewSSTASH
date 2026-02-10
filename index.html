@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sstash Burgers</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <img src="images/sstash-logo.png" class="logo">
+    <h1>Sstash Burgers</h1>
+    <p>Loaded burgers. No shortcuts.</p>
+    <button id="orderBtn">Order Pickup</button>
+  </header>
+
+
+  <!-- MENU -->
+  <section class="menu">
+    <h2>Menu</h2>
+
+    <div class="item">
+        <img src="images/sstash-burger.jpg">
+        <h3>Classic Smash</h3>
+        <p>$8.99</p>
+        <button onclick="addToCart('Classic Smash', 8.99)">Add to Cart</button>
+</div>
+
+    <div class="item">
+        <img src="images/sstash-burger-name.jpg">
+        <h3>Double Stash</h3>
+        <p>$11.99</p>
+        <button onclick="addToCart('Double Stash', 11.99)">Add to Cart</button>
+</div>
+
+
+  </section>
+
+  <!-- CART -->
+  <section class="cart">
+    <h2>Your Order</h2>
+    <ul id="cartList"></ul>
+    <p id="total">Total: $0</p>
+    <button id="checkoutBtn">Checkout</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
