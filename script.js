@@ -72,12 +72,25 @@ const statusText = document.getElementById("today-status");
 
 if (statusText) {
   if (!HOURS[today]) {
-    statusText.textContent = "Closed today";
+
+    statusText.textContent = "Closed today — opens Wednesday at 2PM";
+    statusText.classList.add("status-banner", "status-closed");
+
   } else {
+
     const { open, close } = HOURS[today];
-    statusText.textContent = `Open today: ${open}:00 – ${close}:00`;
+
+    const openTime = new Date(0,0,0,open)
+      .toLocaleTimeString([], { hour: 'numeric' });
+
+    const closeTime = new Date(0,0,0,close)
+      .toLocaleTimeString([], { hour: 'numeric' });
+
+    statusText.textContent = `Open today: ${openTime} – ${closeTime}`;
+    statusText.classList.add("status-banner", "status-open");
   }
 }
+
 
 /* =========================
    PICKUP TIME GENERATOR
