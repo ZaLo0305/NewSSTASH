@@ -164,18 +164,96 @@ body {
    ORDER PANEL
 ========================= */
 
+/* =========================
+   ORDER PANEL — MOBILE OPTIMIZED
+========================= */
+
 #order {
-  max-width: 420px;
+  max-width: 500px;
   margin: 3rem auto;
   background: #101512;
-  padding: 2rem;
+  padding: 1.8rem;
   border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+#order h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#order-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+#order-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #1f2a22;
+  font-size: 0.95rem;
+}
+
+#order-form {
+  margin-top: 1rem;
+}
+
+#order-form label {
+  display: block;
+  margin-top: 0.9rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+#order-form input,
+#order-form select {
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 0.3rem;
+  border-radius: 10px;
+  border: none;
+  background: #0c120e;
+  color: white;
+  font-size: 0.95rem;
 }
 
 #order-form button {
+  width: 100%;
   background: #1f5f3a;
   color: white;
+  margin-top: 1.2rem;
+  padding: 0.9rem;
+  border-radius: 12px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
 }
+
+#order-form button:hover {
+  background: #2f7a4d;
+}
+
+/* MOBILE STACK FIX */
+@media (max-width: 600px) {
+
+  #order {
+    width: 92%;
+    padding: 1.3rem;
+  }
+
+  #order-list li {
+    font-size: 0.9rem;
+  }
+
+  #order-form input,
+  #order-form select {
+    font-size: 0.9rem;
+  }
+}
+
 
 /* =========================
    FLOATING ORDER BUTTON
